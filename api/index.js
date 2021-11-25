@@ -20,6 +20,18 @@ bot.onText(/\/start/, (msg) => {
     );
 });
 
+bot.onText(/\/main_menu/, (msg) => {
+    global_msg_id = msg.chat.id;
+    bot.sendMessage(
+        global_msg_id,
+        `
+            Please Select Your Menu \n
+            click /show_url for Test Program \n
+            click /start for come back
+        `
+    );
+});
+
 bot.onText(/\/show_url/, (msg) => {
     global_msg_id = msg.chat.id;
     bot.sendMessage(
