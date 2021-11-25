@@ -15,7 +15,7 @@ bot.onText(/\/start/, (msg) => {
     bot.sendMessage(
         global_msg_id,
         `hello ${msg.chat.first_name}, welcome...\n
-        click /show_url` \n
+        click /show_url \n
         click /main_menu`
     );
 });
