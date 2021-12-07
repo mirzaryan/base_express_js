@@ -15,25 +15,9 @@ bot.onText(/\/start/, (msg) => {
     bot.sendMessage(
         global_msg_id,
         `hello ${msg.chat.first_name}, welcome...\n
-        click /show_url \n
-        click /main_menu
-        `
+        click /show_url`
     );
 });
-
-bot.onText(/\/main_menu/, (msg) => {
-    global_msg_id = msg.chat.id;
-    bot.sendMessage(
-        global_msg_id,
-        `
-        Select Your Menu.. \n
-        click /show_url for Data Testing
-        click /start for come back
-        
-        `
-    );
-});
-
 
 bot.onText(/\/show_url/, (msg) => {
     global_msg_id = msg.chat.id;
@@ -67,11 +51,11 @@ router.get('/sensor/:sensor1/:sensor2/:sensor3', (req, res, next) => {
      );
       res.json({
         "status": 202,
-        "messgae": "Success",
+        "message": "Success",
         "data": {
-          "sensor_1": req.params.sensor1,
-          "sensor_2": req.params.sensor2,
-          "sensor_3": req.params.sensor3
+          "sensor_1": parseInt(req.params.sensor3),
+          "sensor_2": parseInt(req.params.sensor1),
+          "sensor_3": parseInt(req.params.sensor2)
         }
       });
   } catch (err) {
